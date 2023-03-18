@@ -1,0 +1,9 @@
+Feature: User login
+Registered user should be able to login to access account details_1
+
+Scenario: login with valid credentials_1
+
+Given User navigate to login page
+When User enters valid email address "jagansaras98@gmail.com"
+And Enter the password "Admin@123"
+Then user should login successfully

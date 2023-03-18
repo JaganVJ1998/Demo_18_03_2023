@@ -1,0 +1,53 @@
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Googlelaunch {
+	
+	public  WebDriver driver;
+	
+	@Given("launch the google")
+	public void launch_the_google() {
+	  WebDriverManager.chromedriver().setup();
+	  driver = new ChromeDriver();
+	  driver.get("https://www.google.com");
+	  driver.manage().window().maximize();
+	  driver.manage().deleteAllCookies();
+	  
+	}
+
+	@When("find the inputbox and sendkeys {string}")
+	public void find_the_inputbox_and_sendkeys(String string) {
+	  driver.findElement(By.name("q")).sendKeys(string + Keys.ENTER);
+	}
+
+	@When("valdiate the title and url of the page")
+	public void valdiate_the_title_and_url_of_the_page() {
+		
+		driver.findElement(By.xpath("//*[text()='Cricbuzz']")).click();
+		
+		String title = driver.getTitle();
+		System.out.println("Title: " + title);
+		
+		String currentUrl = driver.getCurrentUrl();
+		System.out.println("CurrentURL of the page: " + currentUrl);
+		
+	 
+	}
+
+	@Then("close the browser")
+	public void close_the_browser()throws InterruptedException {
+	    Thread.sleep(3000);
+	    driver.close();
+	    
+	}
+
+}

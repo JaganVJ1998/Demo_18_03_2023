@@ -1,0 +1,25 @@
+io.cucumber.junit.UndefinedStepException: The step 'launch the google' and 3 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("launch the google")
+public void launch_the_google() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("find the inputbox and sendkeys {string}")
+public void find_the_inputbox_and_sendkeys(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("valdiate the title and url of the page")
+public void valdiate_the_title_and_url_of_the_page() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("close the browser")
+public void close_the_browser() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
